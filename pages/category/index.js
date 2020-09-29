@@ -1,66 +1,40 @@
 // pages/category/index.js
+// 引入 发送请求的方法
+import { request } from "../../request/index.js"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    // 左侧菜单数据
+    leftMenuList: [],
+    // 右侧商品数据
+    rightContent: [],
+    // 左侧菜单点击
+    currentIndex: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getCates();
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  
+  // 获取左侧分类栏数据
+  getCates(){
+    request({url:"https://api-hmugo-web.itheima.net/api/public/v1/categories"})
+    .then(res=>{
+      this.cates = res.data.message;
+      // 构造左侧滚动栏数据
+      let leftMenuList = this.cates.map(v=>v.cat_name);
+      // 构造右侧商品栏数据
+      let rightContent = this.cates[0].children;
+      this.setData({
+        leftMenuList,
+        rightContent
+      });
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })
