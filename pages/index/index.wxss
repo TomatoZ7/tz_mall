@@ -26,9 +26,9 @@
 }
 .index_floor .floor_group .floor_list navigator {
   float: left;
-  width: 33.33%;
+  width: 240rpx;
+  margin: 5rpx;
   /* 后面四张图片 */
-  /* 右侧上面二张图片 */
 }
 .index_floor .floor_group .floor_list navigator:nth-last-child(-n+4) {
   /* 
@@ -36,7 +36,7 @@
             等比关系： 232 / 386 = 33.33vw / height
             第一张图片高度： height = 33.33vw * 386 / 232
           */
-  height: 27.72711207vw;
+  height: 196.32758621rpx;
 }
 .index_floor .floor_group .floor_list navigator image {
   width: 100%;

@@ -31,8 +31,8 @@
       overflow: hidden;
       navigator{
         float: left;
-        width: 33.33%;
-        // padding: 5rpx;
+        width: 240rpx;
+        margin: 5rpx;
         /* 后面四张图片 */
         &:nth-last-child(-n+4){
           /* 
@@ -40,14 +40,12 @@
             等比关系： 232 / 386 = 33.33vw / height
             第一张图片高度： height = 33.33vw * 386 / 232
           */
-          height: 33.33vw * 386 / 232 / 2;
-        }
-        /* 右侧上面二张图片 */
-        &:nth-child(2),&:nth-child(3){
-          // border-bottom: 10rpx solid #fff;
+          height: 236rpx * 386 / 232 / 2;
+
         }
         image{
           width: 100%;
+          // height: 33.33vw * 386 / 232 / 2;
           height: 100%;
         }
       }
