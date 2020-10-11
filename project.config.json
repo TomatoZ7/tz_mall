@@ -13,8 +13,8 @@
     "newFeature": false,
     "coverView": true,
     "nodeModules": false,
-    "autoAudits": false,
-    "showShadowRootInWxmlPanel": true,
+    "autoAudits": true,
+    "showShadowRootInWxmlPanel": false,
     "scopeDataCheck": false,
     "uglifyFileName": false,
     "checkInvalidKey": true,
@@ -73,6 +73,21 @@
           "id": -1,
           "name": "分类",
           "pathName": "pages/category/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "商品列表",
+          "pathName": "pages/goods_list/index",
+          "query": "cid=5",
+          "scene": null
+        },
+        {
+          "id": 2,
+          "name": "商品详情",
+          "pathName": "pages/goods_detail/index",
+          "query": "goods_id=43986",
           "scene": null
         }
       ]
